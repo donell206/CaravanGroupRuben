@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace CaravanLib.Interfaces
 {
-    public interface ITrekker
+    public interface ITrekker : ITrekbaar
     {
+        #region PROPERTIES
+        ITrekbaar AanhangWagen { get; }
+        int MaximaalTrekGewicht { get; }
+        #endregion
+        #region METHODS
+        void KoppelAanhangwagen(ITrekbaar aanhangwagen);
+        #endregion
     }
 }

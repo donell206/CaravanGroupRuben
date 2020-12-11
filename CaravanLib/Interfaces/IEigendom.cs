@@ -8,5 +8,6 @@ namespace CaravanLib.Interfaces
 {
     public interface IEigendom
     {
+        
     }
 }

@@ -8,5 +8,9 @@ namespace CaravanLib.Interfaces
 {
     public interface IBewoonbaar
     {
+        #region PROPERTIES
+        int AantalSlaapKamers { get;}
+        int BewoonbaarOppervlakte { get;}
+        #endregion
     }
 }

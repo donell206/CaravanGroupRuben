@@ -3,13 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CaravanLib.Interfaces;
 
 namespace CaravanLib.Models
 {
-    public class Motorhome
+    public class Motorhome : Auto, IBewoonbaar
     {
-        #region PROPERTIES
+        public int AantalSlaapKamers { get; private set; }
+        private int _bewoonbaarOppervlakte;
 
+        public int BewoonbaarOppervlakte
+        {
+            get { return _bewoonbaarOppervlakte; }
+            set
+            {
+                if (value < 0)
+                {
+                    Console.WriteLine("Het bewoonbare oppervlakte mag niet kleiner dan 0 zijn");
+                }
+                else
+                {
+                    _bewoonbaarOppervlakte = value;
+                }
+            }
+        }
+
+        #region PROPERTIES
+        public Motorhome()
+        {
+            AantalSlaapKamers = 1;
+        }
+        public Motorhome(int bewoonbaarOppervlakte) : this()
+        {
+
+        }
         #endregion
         #region CONSTRUCTORS
 
