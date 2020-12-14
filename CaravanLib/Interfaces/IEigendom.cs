@@ -1,13 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CaravanLib.Interfaces
+﻿namespace CaravanLib.Interfaces
 {
     public interface IEigendom
     {
-        
+        #region PROPERTIES
+        string Eigenaar { get; }
+        double Prijs { get; }
+        #endregion
+        #region METHODS
+        /// <summary>
+        /// Nieuwe prijs bepalen
+        /// 
+        /// Nieuwe eigenaar bepalen
+        /// </summary>
+        /// <param name="nieuwePrijs"></param>
+        void BepaalPrijs(double nieuwePrijs);
+        void VerkoopAan(string nieuweEigenaar);
+        #endregion
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CaravanLib.Models
 {
@@ -25,27 +21,13 @@ namespace CaravanLib.Models
                 }
             }
         }
-
-        private int _bewoonbaarOppervlakte;
-        public int BewoonbaarOppervlakte
-        {
-            get { return _bewoonbaarOppervlakte; }
-            set
-            {
-                _bewoonbaarOppervlakte = value;
-            }
-        }
+      
         #endregion
         #region CONSTRUCTORS
-        public Kasteel(int aantalSlaapkamers, int bewoonbaarOppervlakte)
+        public Kasteel(int aantalSlaapkamers, int bewoonbaarOppervlakte,string eigenaar,double prijs):base(aantalSlaapkamers,bewoonbaarOppervlakte,eigenaar,prijs)
         {
-            AantalSlaapkamers = aantalSlaapkamers;
-            BewoonbaarOppervlakte = bewoonbaarOppervlakte;
+
         }
-            
-
-
-
         #endregion
         #region METHODS
         /// <summary>

@@ -49,6 +49,13 @@
   <ItemGroup>
     <None Include="16.00_Opdracht_Caravan.pdf" />
     <None Include="App.config" />
+    <None Include="Readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CaravanLib\CaravanLib.csproj">
+      <Project>{5339bc86-d8a0-4236-ae11-3b44e42da9ed}</Project>
+      <Name>CaravanLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

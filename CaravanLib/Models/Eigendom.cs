@@ -1,18 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CaravanLib.Interfaces;
 
 namespace CaravanLib.Models
 {
-    public class Eigendom
+    public abstract class Eigendom : IEigendom
     {
         #region PROPERTIES
-
+        public string Eigenaar { get; private set; }
+        public double Prijs { get; private set; }
         #endregion
         #region CONSTRUCTORS
-
+        public Eigendom(string eigenaar, double prijs)
+        {
+            VerkoopAan(eigenaar);
+            BepaalPrijs(prijs);
+        }
         #endregion
         #region METHODS
         /// <summary>
@@ -21,7 +23,32 @@ namespace CaravanLib.Models
         /// <returns>formatted class</returns>
         public override string ToString()
         {
-            return base.ToString();
+            return $"Eigenaar: {Eigenaar}\nPrijs: {Prijs}";
+        }
+
+        /// <summary>
+        /// Bepaalt nieuwe prijs, prijs kan niet negatief zijn
+        /// </summary>
+        /// <param name="nieuwePrijs"></param>
+        public void BepaalPrijs(double nieuwePrijs)
+        {
+            if (nieuwePrijs < 0)
+            {
+                Console.WriteLine("Prijs kan niet negatief zijn");
+            }
+            else
+            {
+                Prijs = nieuwePrijs;
+            }
+        }
+
+        /// <summary>
+        /// Bepaalt nieuwe eigenaar
+        /// </summary>
+        /// <param name="nieuweEigenaar"></param>
+        public void VerkoopAan(string nieuweEigenaar)
+        {
+            Eigenaar = nieuweEigenaar;
         }
         #endregion
     }

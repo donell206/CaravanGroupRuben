@@ -1,47 +1,40 @@
 ﻿using CaravanLib.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CaravanLib.Exceptions;
 
 namespace CaravanLib.Models
 {
-    public class Auto : IVoertuig , ITrekker
+    public class Auto : Eigendom, IVoertuig, ITrekker
     {
         #region PROPERTIES
         public int MaximumSnelheid { get; set; }
         public string Merk { get; set; }
-        public int Snelheid  { get;  private set; }
+        public int Snelheid { get; private set; }
         public ITrekbaar AanhangWagen { get; private set; }
         public int MaximaalTrekGewicht { get; set; }
         public int AantalBanden { get; set; }
         public int Gewicht { get; set; }
         #endregion
         #region CONSTRUCTORS
-        public Auto(int maximumSnelheid, string merk,ITrekbaar aanhangWagen,int maximaalTrekGewicht, int aantalBanden, int gewicht)
+        public Auto(int maximumSnelheid, string merk, ITrekbaar aanhangWagen, int maximaalTrekGewicht, int aantalBanden, int gewicht, string eigenaar, double prijs) : base(eigenaar, prijs)
         {
-            this.MaximumSnelheid = maximumSnelheid;
-            this.Merk = merk;
-            this.Snelheid = 0;
-            this.AanhangWagen = aanhangWagen;
-            this.MaximaalTrekGewicht = maximaalTrekGewicht;
-            this.AantalBanden = aantalBanden;
-            this.Gewicht = gewicht;
-        }
-        public Auto()
-        {
-
+            MaximumSnelheid = maximumSnelheid;
+            Merk = merk;
+            Snelheid = 0;
+            AanhangWagen = aanhangWagen;
+            MaximaalTrekGewicht = maximaalTrekGewicht;
+            AantalBanden = aantalBanden;
+            Gewicht = gewicht;
         }
         #endregion
         #region METHODS 
         /// <summary>
-        /// makes a correct representation of the class
+        /// Geeft de class Auto een geformatteerde string
         /// </summary>
-        /// <returns>formatted class</returns>
+        /// <returns>ToString</returns>
         public override string ToString()
         {
-            return $"Merk: {Merk}\nMaximumSnelheid: {MaximumSnelheid}\nSnelheid: {Snelheid}\nAanhangwagen: {AanhangWagen}\nMaximaalTrekGewicht: {MaximaalTrekGewicht}\nAantalBanden: {AantalBanden}\nGewicht: {Gewicht} ";
+            return base.ToString() + $"\nMerk: {Merk}\nMaximumSnelheid: {MaximumSnelheid}\nSnelheid: {Snelheid}\nAanhangwagen:\n{AanhangWagen}\nMaximaalTrekGewicht: {MaximaalTrekGewicht}\nAantalBanden: {AantalBanden}\nGewicht: {Gewicht} ";
         }
         /// <summary>
         /// Versnelt de auto
@@ -59,7 +52,7 @@ namespace CaravanLib.Models
                 else
                 {
                     Snelheid += versnelling;
-                } 
+                }
             }
             else
             {
@@ -90,22 +83,26 @@ namespace CaravanLib.Models
             }
         }
         /// <summary>
-        /// 
+        /// Koppelt de aanhangwagen aan de auto
         /// </summary>
         /// <param name="aanhangwagen"></param>
         public void KoppelAanhangwagen(ITrekbaar aanhangwagen)
         {
-            if(Snelheid != 0)
+            if (Snelheid != 0)
             {
-                Console.WriteLine("Auto moet stil staan voor aanhangwagen te koppelen.");
-            }
-            else if(Gewicht + aanhangwagen.Gewicht > MaximaalTrekGewicht)
-            {
-                throw new Exception("Auto is overbeladen");
+                throw new Exception("Auto staat niet stil");
             }
             else
             {
-                AanhangWagen = aanhangwagen;
+                if (Gewicht + aanhangwagen.Gewicht > MaximaalTrekGewicht)
+                {
+                    OverBeladenException e = new OverBeladenException(MaximaalTrekGewicht, aanhangwagen.Gewicht);
+                    Console.WriteLine(e.Message);
+                }
+                else
+                {
+                    AanhangWagen = aanhangwagen;
+                }
             }
         }
         #endregion 

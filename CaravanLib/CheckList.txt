@@ -1,0 +1,24 @@
+﻿CHECKLIST
+
+Itrekbaar				DONE
+IBewoonbaar				DONE
+IBelaadbaar				DONE
+IEigendom				DONE
+IVoertuig				DONE
+ITrekker				DONE
+
+Aanhangwagen			DONE
+Caravan					DONE
+Auto					exceptions nog toevoegen
+Eigendom				DONE
+Boot					DONE
+Huis					DONE
+Kasteel					DONE
+Motorhome				DONE
+Transportboot			DONE
+Woonboot				DONE
+
+KoppelException			DONE
+OverbeladenExceptopn	DONE
+
+Program					Foute inputs checken

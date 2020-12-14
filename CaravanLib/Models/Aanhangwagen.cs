@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CaravanLib.Interfaces;
 
 namespace CaravanLib.Models
 {
-    public class Aanhangwagen : ITrekbaar
+    public class Aanhangwagen : Eigendom , ITrekbaar
     {
         #region PROPERTIES
         private int aantalBanden;
@@ -16,7 +12,7 @@ namespace CaravanLib.Models
             get { return aantalBanden; }
             set
             {
-                if (AantalBanden < 2)
+                if (value < 2)
                 {
                     Console.WriteLine("Je hebt minstens 2 banden nodig");
                 }
@@ -42,13 +38,9 @@ namespace CaravanLib.Models
                 }
             }
         }
-
         #endregion
         #region CONSTRUCTORS
-        public Aanhangwagen()
-        {
-        }
-        public Aanhangwagen(int aantalBanden, int gewicht) 
+        public Aanhangwagen(int aantalBanden, int gewicht,string eigenaar, double prijs):base(eigenaar, prijs)
         {
             AantalBanden = aantalBanden;
             Gewicht = gewicht;
@@ -56,12 +48,12 @@ namespace CaravanLib.Models
         #endregion
         #region METHODS
         /// <summary>
-        /// makes a correct representation of the class
+        /// Geeft de class Aanhangwagen een geformatteerde string
         /// </summary>
-        /// <returns>formatted class</returns>
+        /// <returns>ToString</returns>
         public override string ToString()
         {
-            return $"aantal banden: {AantalBanden}\ngewicht: {Gewicht}";
+            return base.ToString() + $"\naantal banden: {AantalBanden}\ngewicht: {Gewicht}";
         }
         #endregion
     }

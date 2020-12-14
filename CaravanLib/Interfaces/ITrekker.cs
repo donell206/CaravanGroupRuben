@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CaravanLib.Interfaces
+﻿namespace CaravanLib.Interfaces
 {
     public interface ITrekker : ITrekbaar
     {
@@ -13,6 +7,7 @@ namespace CaravanLib.Interfaces
         int MaximaalTrekGewicht { get; }
         #endregion
         #region METHODS
+        //Koppelt de aanhangwagen
         void KoppelAanhangwagen(ITrekbaar aanhangwagen);
         #endregion
     }

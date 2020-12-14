@@ -1,28 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CaravanLib.Exceptions
 {
-    public class OverBeladenException
+    public class OverBeladenException : Exception
     {
         #region PROPERTIES
-
+        public int MaximaleTrekkracht { get; set; }
+        public int TeTrekkenGewicht { get; set; }
         #endregion
         #region CONSTRUCTORS
-
-        #endregion
-        #region METHODS
-        /// <summary>
-        /// makes a correct representation of the class
-        /// </summary>
-        /// <returns>formatted class</returns>
-        public override string ToString()
+        public OverBeladenException(int maximaleTrekkracht, int teTrekkenGewicht)
         {
-            return base.ToString(); 
+            MaximaleTrekkracht = maximaleTrekkracht;
+            TeTrekkenGewicht = teTrekkenGewicht;
         }
+        #endregion
+        /// <summary>
+        /// Geeft de OverBeladenException een geformatteerde string
+        /// </summary>
+        #region METHODS
+        public override string Message => $"De trekkracht is {MaximaleTrekkracht} en het gewicht van de aanhangwagen bedraagt {TeTrekkenGewicht}";
         #endregion
     }
 }

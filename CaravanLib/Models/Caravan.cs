@@ -1,37 +1,45 @@
 ﻿using CaravanLib.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CaravanLib.Models
 {
     public class Caravan : Aanhangwagen, IBewoonbaar
     {
         #region PROPERTIES
-        public int AantalSlaapKamers { get; set; }
-        public int BewoonbaarOppervlakte { get; set; }
+        public int AantalSlaapkamers { get; private set; }
+        private int _bewoonbaarOppervlakte;
+
+        public int BewoonbaarOppervlakte
+        {
+            get { return _bewoonbaarOppervlakte; }
+            set 
+            {
+                if (value<0)
+                {
+                    Console.WriteLine("De oppervlakte moet groter dan 0 zijn");
+                }
+                else
+                {
+                    _bewoonbaarOppervlakte = value; 
+                }
+            }
+        }
         #endregion
         #region CONSTRUCTORS
-        public Caravan()
+        public Caravan(int bewoonbaarOppervlakte, int aantalbanden, int gewicht,string eigenaar,double prijs):base(aantalbanden,gewicht,eigenaar,prijs)
         {
-
-        }
-        public Caravan(int aantalSlaapkamers, int bewoonbaarOppervlakte, int aantalbanden, int gewicht):base(aantalbanden,gewicht)
-        {
-            AantalSlaapKamers = aantalSlaapkamers;
+            AantalSlaapkamers = 1;
             BewoonbaarOppervlakte = bewoonbaarOppervlakte;
         }
         #endregion
         #region METHODS
         /// <summary>
-        /// makes a correct representation of the class
+        /// Geeft de class Caravan een geformatteerde string
         /// </summary>
-        /// <returns>formatted class</returns>
+        /// <returns>ToString</returns>
         public override string ToString()
         {
-            return base.ToString() + $"\nAantal slaapkamers: {AantalSlaapKamers}\nOppervlakte: {BewoonbaarOppervlakte}";
+            return base.ToString() + $"\nAantal slaapkamers: {AantalSlaapkamers}\nOppervlakte: {BewoonbaarOppervlakte}";
         }
         #endregion
     }

@@ -1,27 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CaravanLib.Exceptions
 {
-    public class KoppelException
+    public class KoppelException : Exception
     {
         #region PROPERTIES
-
+        public int Snelheid { get; set; }
         #endregion
         #region CONSTRUCTORS
-
+        public KoppelException(string message, int snelheid)
+        {
+            Snelheid = snelheid;
+        }
         #endregion
         #region METHODS
         /// <summary>
-        /// makes a correct representation of the class
+        /// Geeft error wanneer koppeling niet mogelijk is(voertuig in beweging)
         /// </summary>
         /// <returns>formatted class</returns>
-        public override string ToString()
+        public override string Message
         {
-            return base.ToString();
+            get
+            {
+                return $"Auto is nog in beweging snelheid: {Snelheid}";
+            }
         }
         #endregion
     }

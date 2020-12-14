@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CaravanLib.Interfaces;
 
 namespace CaravanLib.Models
 {
     public class Motorhome : Auto, IBewoonbaar
     {
-        public int AantalSlaapKamers { get; private set; }
+        public int AantalSlaapkamers { get; private set; }
         private int _bewoonbaarOppervlakte;
 
         public int BewoonbaarOppervlakte
         {
             get { return _bewoonbaarOppervlakte; }
-            set
+            private set
             {
                 if (value < 0)
                 {
@@ -27,19 +23,14 @@ namespace CaravanLib.Models
                 }
             }
         }
-
         #region PROPERTIES
-        public Motorhome()
-        {
-            AantalSlaapKamers = 1;
-        }
-        public Motorhome(int bewoonbaarOppervlakte) : this()
-        {
-
-        }
         #endregion
         #region CONSTRUCTORS
-
+        public Motorhome(int bewoonbaarOppervlakte,int maximumsnelheid,string merk,ITrekbaar aanhangwagen,int maximaalTrekGewicht, int aantalBanden, int gewicht, string eigenaar, double prijs) : base(maximumsnelheid,merk,aanhangwagen,maximaalTrekGewicht,aantalBanden,gewicht,eigenaar, prijs)
+        {
+            AantalSlaapkamers = 1;
+            BewoonbaarOppervlakte = bewoonbaarOppervlakte;
+        }
         #endregion
         #region METHODS
         /// <summary>
@@ -48,7 +39,7 @@ namespace CaravanLib.Models
         /// <returns>formatted class</returns>
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + $"\nAantal slaapkamers: {AantalSlaapkamers}\nBewoonbaar oppervlakte: {BewoonbaarOppervlakte}";
         }
         #endregion
     }

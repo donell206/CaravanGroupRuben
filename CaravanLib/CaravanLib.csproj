@@ -64,9 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagrams\DiagramAlles.cd" />
-    <None Include="Diagrams\DiagramDeel1.cd" />
-    <None Include="Diagrams\DiagramDeel2.cd" />
-    <None Include="Diagrams\DiagramDeel3.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

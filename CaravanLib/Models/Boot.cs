@@ -1,47 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CaravanLib.Interfaces;
 
 namespace CaravanLib.Models
 {
-    public class Boot : IVoertuig
+    public abstract class Boot : Eigendom, IVoertuig
     {
         #region PROPERTIES
         public int MaximumSnelheid { get; set; }
         public string Merk { get; set; }
         public int Snelheid { get; private set; }
-
         #endregion
         #region CONSTRUCTORS
-        public Boot(int maximumSnelheid, string merk):this()
+        public Boot(int maximumSnelheid, string merk,string eigenaar,double prijs) :base(eigenaar,prijs)
         {
             MaximumSnelheid = maximumSnelheid;
             Merk = merk;
-        }
-        public Boot()
-        {
             Snelheid = 0;
         }
-
-
         #endregion
         #region METHODS
         /// <summary>
-        /// makes a correct representation of the class
+        /// Geeft de class Boot een geformatteerde string
         /// </summary>
-        /// <returns>formatted class</returns>
+        /// <returns>ToString</returns>
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + $"\nMaximumsnelheid: {MaximumSnelheid}\nMerk: {Merk}\nSnelheid: {Snelheid}";
         }
         /// <summary>
         /// Maximumsnelheid mag niet overschreden worden, indien overschreden wordt snelheid de maximumsnelheid
         /// De snelheid kan niet negatief zijn. Indien negatief, 
         /// </summary>
-        /// <param name="versnelling"></param>
+        /// <param name="versnelling">geeft hoeveel de boot versnelt</param>
         public void Versnel(int versnelling)
         {
             if (versnelling > 0)
@@ -54,17 +44,18 @@ namespace CaravanLib.Models
                 else
                 {
                     Snelheid += versnelling;
-                } 
+                }
             }
             else
             {
-                Console.WriteLine ("Je moet een positieve versnelling geven");
+                Console.WriteLine("Je moet een positieve versnelling geven");
             }
         }
         /// <summary>
-        /// 
+        /// Vertraagt de Boot
+        /// Als de boot trager gaat dan 0 => staat hij gewoon stil en gaat niet achteruit
         /// </summary>
-        /// <param name="vertraging"></param>
+        /// <param name="vertraging">geeft hoeveel de boot vertraagt</param>
         public void Vertraag(int vertraging)
         {
             if (vertraging > 0)

@@ -1,2 +1,146 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CaravanLib.Exceptions.KoppelException" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Exceptions\KoppelException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CaravanLib.Exceptions.OverBeladenException" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Exceptions\OverBeladenException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CaravanLib.Models.Aanhangwagen" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAACAAAAAgAAAAAAAAEAAAABAA=</HashCode>
+      <FileName>Models\Aanhangwagen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CaravanLib.Models.Auto" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAACAAAAAAACEAAAAAAAAAAgAAAAgAAAEBIAAAAE=</HashCode>
+      <FileName>Models\Auto.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CaravanLib.Models.Beurs" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAQgCABAAAAAAAAIAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Models\Beurs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CaravanLib.Models.Boot" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAACAAAAAAAAEAAAAAAAAAAAAAAAgAAAAAIAAAAA=</HashCode>
+      <FileName>Models\Boot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CaravanLib.Models.Caravan" Collapsed="true">
+    <Position X="12.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAEAAAAAAAAAAAAAAgAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\Caravan.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CaravanLib.Models.Eigendom" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAEAAAEAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Eigendom.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CaravanLib.Models.Huis" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAEAAAAAAAAAAAAAAgAAgAAAAAQAAA=</HashCode>
+      <FileName>Models\Huis.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CaravanLib.Models.Kasteel" Collapsed="true">
+    <Position X="15.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Models\Kasteel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CaravanLib.Models.Motorhome" Collapsed="true">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAEAAAAAAAAAAAAAAgAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\Motorhome.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CaravanLib.Models.Transportboot" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAIAAAAAAAgAAAEAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Transportboot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CaravanLib.Models.Woonboot" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAEAAAAAAAAAAAAAAgAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\Woonboot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="CaravanLib.Interfaces.IBelaadbaar" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAIAAAAAAAgAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IBelaadbaar.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CaravanLib.Interfaces.IBewoonbaar" Collapsed="true">
+    <Position X="20" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IBewoonbaar.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CaravanLib.Interfaces.IEigendom" Collapsed="true">
+    <Position X="21.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAEAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IEigendom.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CaravanLib.Interfaces.ITrekbaar" Collapsed="true">
+    <Position X="15.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITrekbaar.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CaravanLib.Interfaces.ITrekker" Collapsed="true">
+    <Position X="15.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAABAAAAAE=</HashCode>
+      <FileName>Interfaces\ITrekker.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CaravanLib.Interfaces.IVoertuig" Collapsed="true">
+    <Position X="18.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAIAAAAA=</HashCode>
+      <FileName>Interfaces\IVoertuig.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
