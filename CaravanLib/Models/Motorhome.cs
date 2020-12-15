@@ -39,7 +39,7 @@ namespace CaravanLib.Models
         /// <returns>formatted class</returns>
         public override string ToString()
         {
-            return base.ToString() + $"\nAantal slaapkamers: {AantalSlaapkamers}\nBewoonbaar oppervlakte: {BewoonbaarOppervlakte}";
+            return base.ToString() + $"\nAantal slaapkamers: {AantalSlaapkamers}\nBewoonbaar oppervlakte: {BewoonbaarOppervlakte}M²";
         }
         #endregion
     }

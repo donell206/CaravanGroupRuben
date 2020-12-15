@@ -34,7 +34,7 @@ namespace CaravanLib.Models
         /// <returns>ToString</returns>
         public override string ToString()
         {
-            return base.ToString() + $"\nMerk: {Merk}\nMaximumSnelheid: {MaximumSnelheid}\nSnelheid: {Snelheid}\nAanhangwagen:\n{AanhangWagen}\nMaximaalTrekGewicht: {MaximaalTrekGewicht}\nAantalBanden: {AantalBanden}\nGewicht: {Gewicht} ";
+            return base.ToString() + $"\nMerk: {Merk}\nMaximumSnelheid: {MaximumSnelheid}KM/h\nSnelheid: {Snelheid}KM/h\nAanhangwagen:\n{AanhangWagen}\nMaximaalTrekGewicht: {MaximaalTrekGewicht}KG\nAantalBanden: {AantalBanden}\nGewicht: {Gewicht}KG ";
         }
         /// <summary>
         /// Versnelt de auto
@@ -69,7 +69,7 @@ namespace CaravanLib.Models
             {
                 if ((Snelheid - vertraging) < 0)
                 {
-                    Console.WriteLine("Snelheid kan niet lager zijn dan 0");
+                    Console.WriteLine("Snelheid kan niet lager zijn dan 0 KM/h");
                     Snelheid = 0;
                 }
                 else

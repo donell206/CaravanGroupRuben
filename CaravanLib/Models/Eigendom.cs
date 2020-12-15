@@ -23,7 +23,7 @@ namespace CaravanLib.Models
         /// <returns>formatted class</returns>
         public override string ToString()
         {
-            return $"Eigenaar: {Eigenaar}\nPrijs: {Prijs}";
+            return $"Eigenaar: {Eigenaar}\nPrijs: €{Prijs}";
         }
 
         /// <summary>
@@ -49,6 +49,15 @@ namespace CaravanLib.Models
         public void VerkoopAan(string nieuweEigenaar)
         {
             Eigenaar = nieuweEigenaar;
+        }
+        /// <summary>
+        /// compares object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public int CompareTo(object obj)
+        {
+            return Prijs.CompareTo((obj as IEigendom).Prijs);
         }
         #endregion
     }

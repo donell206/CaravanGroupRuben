@@ -25,7 +25,7 @@ namespace CaravanLib.Models
         /// <returns>ToString</returns>
         public override string ToString()
         {
-            return base.ToString() + $"\nMaximumsnelheid: {MaximumSnelheid}\nMerk: {Merk}\nSnelheid: {Snelheid}";
+            return base.ToString() + $"\nMaximumsnelheid: {MaximumSnelheid}KM/h\nMerk: {Merk}\nSnelheid: {Snelheid}KM/h";
         }
         /// <summary>
         /// Maximumsnelheid mag niet overschreden worden, indien overschreden wordt snelheid de maximumsnelheid

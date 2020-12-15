@@ -1,6 +1,7 @@
-﻿namespace CaravanLib.Interfaces
+﻿using System;
+namespace CaravanLib.Interfaces
 {
-    public interface IEigendom
+    public interface IEigendom:IComparable
     {
         #region PROPERTIES
         string Eigenaar { get; }

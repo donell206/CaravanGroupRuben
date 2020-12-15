@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using CaravanLib.Models;
 
 namespace CaravanConsole
@@ -7,6 +8,7 @@ namespace CaravanConsole
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             //D
             Beurs beurs;
             //I
@@ -29,8 +31,13 @@ namespace CaravanConsole
             //transportboot: 50kg belading, 20000kg max belading, 50km/u, Smolders, eigenaar = Kenan, €500.000
             beurs.Add(new Transportboot(50, 20000, 50, "Smolders", "Kenan", 500000));
             #endregion
+            //beurs.Add(new Auto(180, "BMW", new Aanhangwagen(4, 150, "Ruben", 50), 1000, 4, 300, "Ruben", 8000));
+            //beurs.Add(new Auto(180, "BMW", new Aanhangwagen(4, 150, "Ruben", 50), 1000, 4, 300, "Ruben", 12000));
+            //beurs.Add(new Auto(180, "BMW", new Aanhangwagen(4, 150, "Ruben", 50), 1000, 4, 300, "Ruben", 9000));
+            //beurs.Add(new Auto(180, "BMW", new Aanhangwagen(4, 150, "Ruben", 50), 1000, 4, 300, "Ruben", 7000));
+            //beurs.Add(new Auto(180, "BMW", new Aanhangwagen(4, 150, "Ruben", 50), 1000, 4, 300, "Ruben", 10000));
+            
             #region INPUT TESTING
-
             //FOUTE INPUTS: foute inputs testen voor de classes
             //Aanhangwagen: 1 Band, 0 gewicht , Eigenaar Coffe, prijs 10
             Aanhangwagen aanhangwagen = new Aanhangwagen(1, 0, "Coffe", 10);
@@ -42,7 +49,7 @@ namespace CaravanConsole
             Huis huis = new Huis(13, 110, "Joe", 12000);
             //kasteel: 1 slaapkamers, 302m², eigenaar = Professor X, €1.100.000 
             Kasteel kasteel = new Kasteel(1, 302, "Professor X", 1100000);
-            //Motorhome: 50m, 120 max snelheid, Merk , MaximaalTrekgewicht , 6 banden, 750kg gewicht, eigenaar , prijs.
+            //Motorhome: 0M², 120 max snelheid, Merk , MaximaalTrekgewicht , 6 banden, 750kg gewicht, eigenaar , prijs.
             Motorhome motorhome = new Motorhome(0, 120, "Arca-Home", new Caravan(25, 2, 500, "Joey", 1000), 15000, 6, 1600, "Cowboy Jack", 25000);
             //Transportboot: Gewicht 100, Maxgewicht 50, MaxSnelheid 10, Merk 0, Eigenaar 0, Prijs 0.5
             Transportboot transportboot = new Transportboot(100, 500, 10, "", "", 0.5);
@@ -87,6 +94,7 @@ namespace CaravanConsole
             testMotorhome.Vertraag(30);
             testMotorhome.BepaalPrijs(5);
             #endregion 
+            
             //O
             //Console.WriteLine(
             //    $"*****AANHANGWAGEN*****\n{aanhangwagen}\n" +
@@ -97,52 +105,86 @@ namespace CaravanConsole
             //    $"*****MOTORHOME*****\n{motorhome}\n" +
             //    $"*****TRANSPORTBOOT*****\n{transportboot}\n" +
             //    $"*****WOONBOOT*****\n{woonboot}\n");
-            //BeursShow(beurs);
+            BeursShow(beurs);
             Console.ReadLine();
         }
 
         private static void BeursShow(Beurs beurs)
         {
-            Console.WriteLine("BELAADBAAR");
-            foreach (var item in beurs.GetBelaadbaarLijst())
+            string input;
+            do
             {
-                if (item != null)
+                Console.Clear();
+                Console.WriteLine("Welk artikel zou u willen bekijken?");
+                Console.WriteLine("1) Belaadbare voertuigen");
+                Console.WriteLine("2) Bewoonbare voertuigen");
+                Console.WriteLine("3) Trekbare voertuigen");
+                Console.WriteLine("4) Trekkers");
+                Console.WriteLine("5) Voertuigen");
+
+                Console.WriteLine("\r\nGeef het cijfer van uw keuze: ");
+                input = Console.ReadLine();
+                switch (input)
                 {
-                    Console.WriteLine($"{item}\n************************************************");
+                    case "0":
+                        Console.WriteLine("Menu gaat sluiten.");
+                        break;
+                    case "1":
+                        Console.WriteLine("BELAADBAAR");
+                        foreach (var item in beurs.GetBelaadbaarLijst())
+                        {
+                            if (item != null)
+                            {
+                                Console.WriteLine($"{item}\n************************************************");
+                            }
+                        }
+                        break;
+                    case "2":
+                        Console.WriteLine("BEWOONBAAR");
+                        foreach (var item in beurs.GetBewoonbaarLijst())
+                        {
+                            if (item != null)
+                            {
+                                Console.WriteLine($"{item}\n************************************************");
+                            }
+                        }
+                        break;
+                    case "3":
+                        Console.WriteLine("TREKBAAR");
+                        foreach (var item in beurs.GetTrekbaarLijst())
+                        {
+                            if (item != null)
+                            {
+                                Console.WriteLine($"{item}\n************************************************");
+                            }
+                        }
+                        break;
+                    case "4":
+                        Console.WriteLine("TREKKERS");
+                        foreach (var item in beurs.GetTrekkerLijst())
+                        {
+                            if (item != null)
+                            {
+                                Console.WriteLine($"{item}\n************************************************");
+                            }
+                        }
+                        break;
+                    case "5":
+                        Console.WriteLine("VOERTUIGEN");
+                        foreach (var item in beurs.GetVoertuigLijst())
+                        {
+                            if (item != null)
+                            {
+                                Console.WriteLine($"{item}\n************************************************");
+                            }
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Kies een juiste lijst");
+                        break;
                 }
-            }
-            Console.WriteLine("BEWOONBAAR");
-            foreach (var item in beurs.GetBewoonbaarLijst())
-            {
-                if (item != null)
-                {
-                    Console.WriteLine($"{item}\n************************************************");
-                }
-            }
-            Console.WriteLine("TREKBAAR");
-            foreach (var item in beurs.GetTrekbaarLijst())
-            {
-                if (item != null)
-                {
-                    Console.WriteLine($"{item}\n************************************************");
-                }
-            }
-            Console.WriteLine("TREKKERS");
-            foreach (var item in beurs.GetTrekkerLijst())
-            {
-                if (item != null)
-                {
-                    Console.WriteLine($"{item}\n************************************************");
-                }
-            }
-            Console.WriteLine("VOERTUIGEN");
-            foreach (var item in beurs.GetVoertuigLijst())
-            {
-                if (item != null)
-                {
-                    Console.WriteLine($"{item}\n************************************************");
-                }
-            }
+                Console.ReadKey();
+            } while (input != "0");
         }
     }
 }

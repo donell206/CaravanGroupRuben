@@ -41,6 +41,7 @@ namespace CaravanLib.Models
                     j++;
                 }
             }
+            Array.Sort(belaadbaar);
             return belaadbaar;
         }
 
@@ -60,6 +61,7 @@ namespace CaravanLib.Models
                     j++;
                 }
             }
+            Array.Sort(bewoonbaar);
             return bewoonbaar;
         }
 
@@ -79,6 +81,7 @@ namespace CaravanLib.Models
                     j++;
                 }
             }
+            Array.Sort(trekbaar);
             return trekbaar;
         }
 
@@ -98,6 +101,7 @@ namespace CaravanLib.Models
                     j++;
                 }
             }
+            Array.Sort(trekker);
             return trekker;
         }
 
@@ -117,6 +121,7 @@ namespace CaravanLib.Models
                     j++;
                 }
             }
+            Array.Sort(voertuig);
             return voertuig;
         }
         #endregion

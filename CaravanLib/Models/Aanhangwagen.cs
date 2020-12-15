@@ -53,7 +53,7 @@ namespace CaravanLib.Models
         /// <returns>ToString</returns>
         public override string ToString()
         {
-            return base.ToString() + $"\naantal banden: {AantalBanden}\ngewicht: {Gewicht}";
+            return base.ToString() + $"\naantal banden: {AantalBanden}\ngewicht: {Gewicht}KG";
         }
         #endregion
     }
