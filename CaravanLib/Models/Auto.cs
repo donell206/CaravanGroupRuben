@@ -90,14 +90,15 @@ namespace CaravanLib.Models
         {
             if (Snelheid != 0)
             {
-                throw new Exception("Auto staat niet stil");
+                KoppelException ke = new KoppelException(Snelheid);
+                throw new Exception(ke.Message);
             }
             else
             {
                 if (Gewicht + aanhangwagen.Gewicht > MaximaalTrekGewicht)
                 {
-                    OverBeladenException e = new OverBeladenException(MaximaalTrekGewicht, aanhangwagen.Gewicht);
-                    Console.WriteLine(e.Message);
+                    OverBeladenException oe = new OverBeladenException(MaximaalTrekGewicht, aanhangwagen.Gewicht);
+                    throw new Exception(oe.Message);
                 }
                 else
                 {

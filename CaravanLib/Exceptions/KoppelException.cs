@@ -8,7 +8,7 @@ namespace CaravanLib.Exceptions
         public int Snelheid { get; set; }
         #endregion
         #region CONSTRUCTORS
-        public KoppelException(string message, int snelheid)
+        public KoppelException(int snelheid)
         {
             Snelheid = snelheid;
         }

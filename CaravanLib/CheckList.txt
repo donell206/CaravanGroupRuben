@@ -21,4 +21,4 @@ Woonboot				DONE
 KoppelException			DONE
 OverbeladenExceptopn	DONE
 
-Program					Foute inputs checken
+Program					Foute inputs checken & Methodes testen
